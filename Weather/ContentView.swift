@@ -35,53 +35,27 @@ struct ContentView: View {
                 }
                 
                 HStack {
-                    VStack {
-                        Text("TUE")
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                            .foregroundStyle(.white)
-                        
-                        Image(systemName: "cloud.sun.rain")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .foregroundStyle(.white)
-                        
-                        Text("80°F")
-                            .font(.title)
-                            .foregroundStyle(.white)
-                    }
-                    VStack {
-                        Text("TUE")
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                            .foregroundStyle(.white)
-                        
-                        Image(systemName: "cloud.sun.rain")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .foregroundStyle(.white)
-                        
-                        Text("80°F")
-                            .font(.title)
-                            .foregroundStyle(.white)
-                    }
-                    VStack {
-                        Text("TUE")
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                            .foregroundStyle(.white)
-                        
-                        Image(systemName: "cloud.sun.rain")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .foregroundStyle(.white)
-                        
-                        Text("80°F")
-                            .font(.title)
-                            .foregroundStyle(.white)
-                    }
+                    WeatherDays()
+                        .padding(.horizontal, 10)
+                    
+                    WeatherDays()
+                    
+                    WeatherDays()
+
+                    WeatherDays()
+                    
+                    WeatherDays()
+
                 }
                 
+                Spacer()
+                
+                Button(action: {}) {
+                    Text("See More")
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                        .foregroundStyle(.white)
+                }
             }
             .padding()
         }
@@ -92,4 +66,25 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+}
+
+struct WeatherDays: View {
+    var body: some View {
+        VStack {
+            Text("TUE")
+                .font(.callout)
+                .fontWeight(.semibold)
+                .foregroundStyle(.white)
+            
+            Image(systemName: "cloud.sun.rain")
+                .resizable()
+                .frame(width: 50, height: 50)
+                .foregroundStyle(.white)
+            
+            Text("80°F")
+                .font(.subheadline)
+                .fontWeight(.semibold)
+                .foregroundStyle(.white)
+        }
+    }
 }
