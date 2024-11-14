@@ -10,27 +10,22 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack {
+            LinearGradient(colors: [.blue, .white], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    .edgesIgnoringSafeArea(.all)
+            
             VStack {
-                Text("Cupertino, CA")
-                    .font(.largeTitle)
+                Text("Ciudad de México")
+                    .font(.system(size: 30))
                     .fontWeight(.semibold)
                     .foregroundStyle(.white)
-                    .padding(.bottom, 70)
+                    .padding()
                 
                 VStack {
-                    Image(systemName: "cloud.sun.rain")
+                    Image(systemName: "cloud.sun.fill")
+                        .renderingMode(.original)
                         .resizable()
+                        .scaledToFit()
                         .frame(width: 200, height: 200)
-                        .foregroundStyle(.white)
-                        .padding(.bottom, 40)
-                    
-                }
-                
-                VStack {
-                    Text("80°F")
-                        .font(.largeTitle)
-                        .fontWeight(.semibold)
-                        .foregroundStyle(.white)
                         .padding()
                 }
                 
@@ -57,10 +52,7 @@ struct ContentView: View {
                         .foregroundStyle(.white)
                 }
             }
-            .padding()
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.cyan.opacity(0.9))
     }
 }
 
