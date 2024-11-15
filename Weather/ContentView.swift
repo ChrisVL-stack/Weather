@@ -32,6 +32,7 @@ struct ContentView: View {
                 Text("24°C")
                     .font(.system(size: 70))
                     .foregroundStyle(.white)
+                    .padding(.bottom, 25)
                 
                 HStack(alignment: .top, spacing: 20) {
                     WeatherDayView(dayOfWeek: "Lun", imageName: "cloud.moon.fill", temperature: 21)
@@ -39,10 +40,23 @@ struct ContentView: View {
                     WeatherDayView(dayOfWeek: "Mie", imageName: "cloud.sun.fill", temperature: 25)
                     WeatherDayView(dayOfWeek: "Jue", imageName: "smoke.fill", temperature: 18)
                     WeatherDayView(dayOfWeek: "Vie", imageName: "sun.horizon.fill", temperature: 15)
-                    WeatherDayView(dayOfWeek: "Vie", imageName: "cloud.bolt.rain.fill", temperature: 15)
+                    WeatherDayView(dayOfWeek: "Sab", imageName: "cloud.bolt.rain.fill", temperature: 12)
                 }
                 
                 Spacer()
+                
+                Button {
+                    print("Hello, World!")
+                } label: {
+                    Text("Cambiar modo")
+                        .frame(width: 280, height: 50)
+                        .foregroundStyle(.black)
+                        .font(.system(size: 17))
+                        .fontWeight(.semibold)
+                        .background(.white)
+                        .cornerRadius(10)
+                }
+                
             }
         }
     }
@@ -70,9 +84,9 @@ struct WeatherDayView: View {
                 .scaledToFit()
                 .frame(width: 40, height: 40)
             Text("\(temperature)°C")
-                .font(.system(size:  15))
+                .font(.system(size:  20))
                 .foregroundStyle(.white)
-                .fontWeight(.semibold)
+                .fontWeight(.regular)
         }
     }
 }
