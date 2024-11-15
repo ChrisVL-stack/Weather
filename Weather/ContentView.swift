@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             LinearGradient(colors: [.blue, .white], startPoint: .topLeading, endPoint: .bottomTrailing)
-                    .edgesIgnoringSafeArea(.all)
+                .edgesIgnoringSafeArea(.all)
             
             VStack {
                 Text("Ciudad de México")
@@ -29,28 +29,8 @@ struct ContentView: View {
                         .padding()
                 }
                 
-                HStack {
-                    WeatherDays()
-                        .padding(.horizontal, 10)
-                    
-                    WeatherDays()
-                    
-                    WeatherDays()
-
-                    WeatherDays()
-                    
-                    WeatherDays()
-
-                }
-                
                 Spacer()
                 
-                Button(action: {}) {
-                    Text("See More")
-                        .font(.headline)
-                        .fontWeight(.semibold)
-                        .foregroundStyle(.white)
-                }
             }
         }
     }
@@ -60,23 +40,4 @@ struct ContentView: View {
     ContentView()
 }
 
-struct WeatherDays: View {
-    var body: some View {
-        VStack {
-            Text("TUE")
-                .font(.callout)
-                .fontWeight(.semibold)
-                .foregroundStyle(.white)
-            
-            Image(systemName: "cloud.sun.rain")
-                .resizable()
-                .frame(width: 50, height: 50)
-                .foregroundStyle(.white)
-            
-            Text("80°F")
-                .font(.subheadline)
-                .fontWeight(.semibold)
-                .foregroundStyle(.white)
-        }
-    }
-}
+
